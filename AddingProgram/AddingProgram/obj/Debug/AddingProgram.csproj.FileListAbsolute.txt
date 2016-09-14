@@ -1,0 +1,6 @@
+c:\users\asbury56\documents\visual studio 2015\Projects\AddingProgram\AddingProgram\bin\Debug\AddingProgram.exe.config
+c:\users\asbury56\documents\visual studio 2015\Projects\AddingProgram\AddingProgram\bin\Debug\AddingProgram.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\AddingProgram\AddingProgram\bin\Debug\AddingProgram.pdb
+c:\users\asbury56\documents\visual studio 2015\Projects\AddingProgram\AddingProgram\obj\Debug\AddingProgram.csprojResolveAssemblyReference.cache
+c:\users\asbury56\documents\visual studio 2015\Projects\AddingProgram\AddingProgram\obj\Debug\AddingProgram.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\AddingProgram\AddingProgram\obj\Debug\AddingProgram.pdb

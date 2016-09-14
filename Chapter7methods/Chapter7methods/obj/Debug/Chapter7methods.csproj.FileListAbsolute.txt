@@ -1,0 +1,6 @@
+c:\users\asbury56\documents\visual studio 2015\Projects\Chapter7methods\Chapter7methods\bin\Debug\Chapter7methods.exe.config
+c:\users\asbury56\documents\visual studio 2015\Projects\Chapter7methods\Chapter7methods\bin\Debug\Chapter7methods.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\Chapter7methods\Chapter7methods\bin\Debug\Chapter7methods.pdb
+c:\users\asbury56\documents\visual studio 2015\Projects\Chapter7methods\Chapter7methods\obj\Debug\Chapter7methods.csprojResolveAssemblyReference.cache
+c:\users\asbury56\documents\visual studio 2015\Projects\Chapter7methods\Chapter7methods\obj\Debug\Chapter7methods.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\Chapter7methods\Chapter7methods\obj\Debug\Chapter7methods.pdb

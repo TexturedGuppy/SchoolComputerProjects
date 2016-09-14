@@ -1,0 +1,6 @@
+c:\users\asbury56\documents\visual studio 2015\Projects\BasicClasses\BasicClasses\bin\Debug\BasicClasses.exe.config
+c:\users\asbury56\documents\visual studio 2015\Projects\BasicClasses\BasicClasses\bin\Debug\BasicClasses.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\BasicClasses\BasicClasses\bin\Debug\BasicClasses.pdb
+c:\users\asbury56\documents\visual studio 2015\Projects\BasicClasses\BasicClasses\obj\Debug\BasicClasses.csprojResolveAssemblyReference.cache
+c:\users\asbury56\documents\visual studio 2015\Projects\BasicClasses\BasicClasses\obj\Debug\BasicClasses.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\BasicClasses\BasicClasses\obj\Debug\BasicClasses.pdb
