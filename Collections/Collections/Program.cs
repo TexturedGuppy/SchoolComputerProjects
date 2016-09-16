@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq; //Stands for Language Integrated Query
 
 namespace Collections
 {
@@ -101,6 +99,11 @@ namespace Collections
         {
             return i == 7;
         }
+
+        static bool FindCharacter(Character c)
+        {
+            return c.strength == 10;
+        }
         static void Main(string[] args)
         {
             LineSegment linesegment = new LineSegment();
@@ -124,18 +127,18 @@ namespace Collections
             Console.WriteLine(linesegment.GetLength());
 
             int[] intArray = new int[10];
-            for(int i = 0; i < 10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 intArray[i] = i;
             }
 
             List<int> intList = new List<int>();
-            for(int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 intList.Add(i);
             }
             intList.Remove(0);
-            for(int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 intList.Add(i);
             }
@@ -184,10 +187,34 @@ namespace Collections
             characters[0].health = 100;
             player.health = 100;
             characters[1].health = 100; //accomplishes same thing as player.health = 100;
+            characters.Add(new Character());
+            characters[characters.Count - 1].strength = 10; //always gets the last element in list
             foreach(Character c in characters)
             {
                 Console.WriteLine(c);
             }
+
+            Predicate<Character> characterSearch = FindCharacter;
+           Character boss = characters.Find(characterSearch);
+
+            //lambda function - anonymous function
+            //function without a signature anywhere/function written in place
+           Character player1 = characters.Find(element => element.health == 100);
+
+            //Using LINQ
+            var intsgreaterthan4 = from value in list where value > 4 select value;
+
+            foreach (int i in intsgreaterthan4)
+                Console.WriteLine(i);
+
+            var listreversed = from value in list orderby value descending select value;
+            foreach (int i in listreversed)
+                Console.WriteLine(i);
+
+            var charactersByStrength = from value in characters orderby value.strength ascending select value;
+            foreach (Character c in charactersByStrength)
+                Console.WriteLine(c);
+
         }
     }
 }
