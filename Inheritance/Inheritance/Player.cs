@@ -39,5 +39,15 @@ namespace Inheritance
             Exp += e.ExpVal;
         }
 
+        public override void TakeTurn()
+        {
+            //Character::TakeTurn(); //C++ way of doing things
+            base.TakeTurn();
+            Console.WriteLine("Player Moving...");
+            Console.WriteLine("In Player::TakeTurn");
+            Console.WriteLine();
+
+        }
+
     }
 }

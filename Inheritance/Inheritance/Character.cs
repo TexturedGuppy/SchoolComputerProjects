@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Inheritance
 {
-    class Character
+    class GameObject
+    {
+        public virtual void TakeTurn()
+        {
+            Console.WriteLine("In Game Object::TakeTurn");
+        }
+    }
+    class Character:GameObject
     {
         public Character(string n)
         {
@@ -15,8 +22,12 @@ namespace Inheritance
             level = 1;
             name = n;
             Console.WriteLine("Character Constructor");
+            id = nextID++;
         }
-       
+
+        static int nextID = 1;
+        public int id;
+
         //protected kind of like public, but only children can use them
        protected string name;
        private int health;
@@ -40,5 +51,13 @@ namespace Inheritance
         {
             get { return name; }
         }
+
+        public override void TakeTurn()
+        {
+            Console.WriteLine("Character with id " + id + " moving");
+            //Console.WriteLine(name + " is moving");
+            Console.WriteLine("In Character::TakeTurn");
+        }
+
     }
 }

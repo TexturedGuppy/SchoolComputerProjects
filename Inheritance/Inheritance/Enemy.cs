@@ -26,5 +26,15 @@ namespace Inheritance
                     expValue = 0;
             }
         }
+        public override void TakeTurn()
+        {
+            base.TakeTurn();
+
+            Console.WriteLine(name + " is moving");
+            Console.WriteLine("In Enemy::TakeTurn");
+            Console.WriteLine();
+
+        }
+
     }
 }
