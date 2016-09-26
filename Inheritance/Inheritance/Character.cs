@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Inheritance
 {
-    class GameObject
+    //abstract - cannot  create instances of GameObject, can only inherit from GameObject
+    abstract class GameObject
     {
         public virtual void TakeTurn()
         {
@@ -57,6 +58,11 @@ namespace Inheritance
             Console.WriteLine("Character with id " + id + " moving");
             //Console.WriteLine(name + " is moving");
             Console.WriteLine("In Character::TakeTurn");
+        }
+
+        public override string ToString()
+        {
+            return name + " " + base.ToString();
         }
 
     }

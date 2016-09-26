@@ -14,8 +14,13 @@ namespace Inheritance
             Player p = new Player("Cameron");
             Enemy e = new Enemy();
 
-            GameObject go = c;
-            go.TakeTurn();
+            p.TakeTurn();
+            //Downcasting - treat a child class like a base class
+            Character characterReference = (Character)p;
+            characterReference.TakeTurn();
+
+            //GameObject go = c;
+            //go.TakeTurn();
 
             //p.Name = "Joe"; //no set in property so error
             Console.WriteLine(p.Name);
@@ -43,7 +48,14 @@ namespace Inheritance
             }
             foreach(Character character in characters)
             {
-                character.TakeTurn();
+                //is keyword compares the types of objects (as opposed to their values)
+                if (character is Player)
+                {
+                    //Character cReference = (Character)c;
+                    Console.WriteLine(character.GetType());
+                }
+
+                //character.TakeTurn();
             }
             //c.Health = 100;
             //p.Health = 90;

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Inheritance
 {
-    class Player:Character
+    //Sealed = nothing can inherit Player or override its functions
+    sealed class Player:Character
     {
         //:after constructor name is the Member Initialization List used to call base class constructor if it has parameters
         public Player(string n)
