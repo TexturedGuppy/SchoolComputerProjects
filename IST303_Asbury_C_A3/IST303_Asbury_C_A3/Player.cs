@@ -11,6 +11,24 @@ namespace IST303_Asbury_C_A3
         private string name;
         private int wins, losses;
 
+        //Enum to track moves of player
+        enum Actions
+        {
+            eRock,
+            ePaper,
+            eScissors
+        };
+
+        //Enum to track wins, loses, and draws
+        enum Results
+        {
+            eWin,
+            eLose,
+            eDraw
+        };
+
+        
+        //Player Properties
         public string Name
         {
             get
@@ -47,6 +65,21 @@ namespace IST303_Asbury_C_A3
             }
         }
 
+        //Player Constructor, sets wins and losses to 0 and sets the player's name.
+        public Player(string _name)
+        {
+            name = _name;
+            Wins = 0;
+            Losses = 0;
+        }
 
+        public void Players(params string[] playerNames)
+        {
+            foreach (string name in playerNames)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
+        }
     }
 }
