@@ -75,8 +75,10 @@ namespace IST303_Asbury_C_A3
 
         public void Players(params string[] playerNames)
         {
+            List<string> playerList = new List<string>();
             foreach (string name in playerNames)
             {
+                playerList.Add(name);
                 Console.WriteLine(name);
             }
             Console.WriteLine();
