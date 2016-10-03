@@ -1,0 +1,6 @@
+c:\users\asbury56\documents\visual studio 2015\Projects\RecursionAndExceptions\RecursionAndExceptions\bin\Debug\RecursionAndExceptions.exe.config
+c:\users\asbury56\documents\visual studio 2015\Projects\RecursionAndExceptions\RecursionAndExceptions\bin\Debug\RecursionAndExceptions.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\RecursionAndExceptions\RecursionAndExceptions\bin\Debug\RecursionAndExceptions.pdb
+c:\users\asbury56\documents\visual studio 2015\Projects\RecursionAndExceptions\RecursionAndExceptions\obj\Debug\RecursionAndExceptions.csprojResolveAssemblyReference.cache
+c:\users\asbury56\documents\visual studio 2015\Projects\RecursionAndExceptions\RecursionAndExceptions\obj\Debug\RecursionAndExceptions.exe
+c:\users\asbury56\documents\visual studio 2015\Projects\RecursionAndExceptions\RecursionAndExceptions\obj\Debug\RecursionAndExceptions.pdb
