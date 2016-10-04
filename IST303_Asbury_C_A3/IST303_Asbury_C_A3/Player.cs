@@ -8,8 +8,10 @@ namespace IST303_Asbury_C_A3
 {
     class Player
     {
-        private string name;
-        private int wins, losses;
+        private string sName;
+        private int iWins; 
+        private int iLosses;
+        static Random rand = new Random();
 
         //Enum to track moves of player
         enum Actions
@@ -33,11 +35,11 @@ namespace IST303_Asbury_C_A3
         {
             get
             {
-                return name;
+                return sName;
             }
             set
             {
-                name = value;
+                sName = value;
             }
         
         }
@@ -46,29 +48,29 @@ namespace IST303_Asbury_C_A3
         {
             get
             {
-                return wins;
+                return iWins;
             }
             set
             {
-                wins = value;
+                iWins = value;
             }
         }
         public int Losses
         {
             get
             {
-                return losses;
+                return iLosses;
             }
             set
             {
-                losses = value;
+                iLosses = value;
             }
         }
 
         //Player Constructor, sets wins and losses to 0 and sets the player's name.
-        public Player(string _name)
+        public Player(string name)
         {
-            name = _name;
+            sName = name;
             Wins = 0;
             Losses = 0;
         }
@@ -82,6 +84,13 @@ namespace IST303_Asbury_C_A3
                 Console.WriteLine(name);
             }
             Console.WriteLine();
+        }
+
+        public void Play(Player opponent)
+        {
+            Actions player1 = (Actions)rand.Next(0,3);
+            Actions player2 = (Actions)rand.Next(0, 3);
+
         }
     }
 }
