@@ -7,3 +7,8 @@ F:\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\bin\Debug
 F:\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\obj\Debug\IST303_Asbury_C_A3.csprojResolveAssemblyReference.cache
 F:\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\obj\Debug\IST303_Asbury_C_A3.exe
 F:\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\obj\Debug\IST303_Asbury_C_A3.pdb
+C:\Users\User\Documents\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\obj\Debug\IST303_Asbury_C_A3.exe
+C:\Users\User\Documents\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\obj\Debug\IST303_Asbury_C_A3.pdb
+C:\Users\User\Documents\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\bin\Debug\IST303_Asbury_C_A3.exe
+C:\Users\User\Documents\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\bin\Debug\IST303_Asbury_C_A3.pdb
+C:\Users\User\Documents\GitHub\SchoolComputerProjects\IST303_Asbury_C_A3\IST303_Asbury_C_A3\obj\Debug\IST303_Asbury_C_A3.csprojResolveAssemblyReference.cache

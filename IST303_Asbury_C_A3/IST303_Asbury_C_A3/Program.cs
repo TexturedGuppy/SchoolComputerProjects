@@ -36,7 +36,13 @@ namespace IST303_Asbury_C_A3
                 Console.WriteLine("{0} is playing his 5 randomized rounds!",players[i].Name);
                 for (int j = 0; j < 5; j++)
                 {
-                    players[i].Play(players[rand.Next(0,5)]);
+                    int rando = rand.Next(0, 5);
+                    if (i == rando)
+                    {
+                        j--;
+                    }
+                    else
+                    players[i].Play(players[rando]);
                 }
                 Console.WriteLine();
             }
