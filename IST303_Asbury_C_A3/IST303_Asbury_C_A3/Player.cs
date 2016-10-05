@@ -99,7 +99,7 @@ namespace IST303_Asbury_C_A3
                 if (name == opponent.Name)
                 {
                     Console.WriteLine("Can't play yourself.");
-                    
+                    break;
                 }
                 Console.WriteLine("Rock, Paper, Scissors...Shoot!");
 
