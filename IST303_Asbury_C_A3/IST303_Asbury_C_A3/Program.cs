@@ -29,18 +29,23 @@ namespace IST303_Asbury_C_A3
         }
         static void Main(string[] args)
         {
+            //My list of players
             List<Player> players = Players("Cameron", "James", "Matt", "Megaman", "Zero");
 
+            //Nested for loop to have each player randomly play 5 different people.
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine("{0} is playing his 5 randomized rounds!",players[i].Name);
                 for (int j = 0; j < 5; j++)
                 {
+                    //Sets random number to a variable
                     int rando = rand.Next(0, 5);
+                    //Checks if you are playing yourself, and if you are takes j back a number to keep the loop counting correctly
                     if (i == rando)
                     {
                         j--;
                     }
+                    //If you don't play yourself, runs you through a round
                     else
                     players[i].Play(players[rando]);
                 }
@@ -49,6 +54,7 @@ namespace IST303_Asbury_C_A3
 
             //LINQ for displaying the leaderboard in descending order.
             //Microsoft MSDN recommends using var instead of IEnumerable<ObjectName> for LINQ
+            //Used string format to make output look nice.
             var leaderboard = from player in players orderby player.Wins descending select player;
             Console.WriteLine("LEADERBOARD:");
             Console.WriteLine("{0,-10} {1,-10} {2,-10}", "NAME","WINS","LOSSES");

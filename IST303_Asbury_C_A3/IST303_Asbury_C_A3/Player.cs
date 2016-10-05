@@ -86,9 +86,11 @@ namespace IST303_Asbury_C_A3
             bool bDraw = true;
             while (bDraw)
             {
+                //Has each player choose a random action (rock, paper, or scissors
                 Actions player1 = (Actions)rand.Next(0 , 3);
                 Actions player2 = (Actions)rand.Next(0 , 3);
 
+                //Checks to see if you are playing yourself, Shouldn't actually ever make it to this code now based on if statement in program
                 if (name == opponent.Name)
                 {
                     Console.WriteLine("Can't play yourself.");
@@ -96,6 +98,7 @@ namespace IST303_Asbury_C_A3
                 }
                 Console.WriteLine("Rock, Paper, Scissors...Shoot!");
 
+                //Checks for a draw here then runs code to see who wins
                 if (player1 != player2)
                 {
 
@@ -149,10 +152,11 @@ namespace IST303_Asbury_C_A3
                             opponent.Wins++;
                         }
                     }
-
+                    //Lets loop know to keep going or not
                     bDraw = false;
                 }
 
+                //Actually catches and lets user know if its a draw
                 if(player1 == player2)
                 {
                     Console.WriteLine("Draw...Play Again!");
