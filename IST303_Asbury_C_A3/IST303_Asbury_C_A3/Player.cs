@@ -24,14 +24,14 @@ namespace IST303_Asbury_C_A3
             eScissors
         };
 
-        //Enum to track wins, loses, and draws
-        //James recommended to me to use two sets of enums
-        enum Results
-        {
-            eWin,
-            eLose,
-            eDraw
-        };
+        ////Enum to track wins, loses, and draws
+        ////James recommended to me to use two sets of enums
+        //enum Results
+        //{
+        //    eWin,
+        //    eLose,
+        //    eDraw
+        //};
 
         
         //Player Properties
