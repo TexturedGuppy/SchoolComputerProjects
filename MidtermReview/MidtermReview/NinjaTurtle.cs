@@ -14,6 +14,33 @@ namespace MidtermReview
        public int damage;
        public int range;
     }
+
+    class Character
+    {
+        public Weapon weapon;
+        public string name;
+
+        public void Attack(NinjaTurtle ninja)
+        {
+
+        }
+    }
+    class BadGuy
+    {
+        public Weapon weapon;
+        public int points;
+        public string name;
+        static Random rand = new Random();
+
+        public BadGuy()
+        {
+            points = rand.Next(1, 100);
+        }
+        public void Attack(NinjaTurtle ninja)
+        {
+
+        }
+    }
     //Classes allow us to define our own data type
     //classes are reference type
     //reference types are equivalent to smart pointers in c++
@@ -23,12 +50,23 @@ namespace MidtermReview
         //Dont forget to make public because if you don't you could no longer create new objects of this class type in main.
         public NinjaTurtle()
         {
+            Console.WriteLine("In the ninjaturtle constructor");
+
             name = "Unnamed";
+            weapon.damage = 10;
+            weapon.range = 5;
+        }
+        public NinjaTurtle(string _name)
+        {
+            Console.WriteLine("In the ninjaturtle constructor");
+            name = _name;
             weapon.damage = 10;
             weapon.range = 5;
         }
         //(instance or member) variables, attributes, fields
         private string name;
+
+        //Data Composition - NinjaTurtles Have a Weapon or "Has A"
         private Weapon weapon;
 
         //Property

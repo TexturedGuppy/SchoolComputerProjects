@@ -38,10 +38,56 @@ namespace MidtermReview
 
             NinjaTurtle raphael = deCaprio;
             Console.WriteLine(raphael.Name);
-            raphael.Name = "Raphael";
-            Console.WriteLine(deCaprio.Name);
             raphael = new NinjaTurtle();
+            raphael.Name = "Raphael";
 
+            
+
+            NinjaTurtle[] ninjaTurtles = new NinjaTurtle[4];
+            ninjaTurtles[0] = new NinjaTurtle("Michaelangelo");
+            ninjaTurtles[1] = raphael;
+            ninjaTurtles[2] = deCaprio;
+            ninjaTurtles[3] = new NinjaTurtle("Donatello");
+
+            try
+            {
+                foreach(NinjaTurtle ninja in ninjaTurtles)
+                {
+                    Console.WriteLine(ninja.Name);
+                }
+            }
+            catch(NullReferenceException exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
+            finally
+            {
+
+            }
+
+            List<BadGuy> baddies = new List<BadGuy>();
+
+            for(int i = 0; i < 10; i++)
+            {
+                baddies.Add(new BadGuy());
+
+            }
+                Console.WriteLine(baddies.Count);
+                Console.WriteLine(baddies.Capacity);
+            foreach (BadGuy bg in baddies)
+            {
+                Console.WriteLine(bg.points);
+            }
+
+            Console.WriteLine();
+            //LINQ
+            //Language Integrated Query
+            var query = from baddie in baddies orderby baddie.points descending select baddie;
+
+            foreach (BadGuy bg in query)
+            {
+                Console.WriteLine(bg.points);
+            }
         }
     }
 }
