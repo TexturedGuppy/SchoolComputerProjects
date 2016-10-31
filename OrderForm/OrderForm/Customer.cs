@@ -11,6 +11,9 @@ namespace OrderForm
         private static int nextID = 1;
         private string name;
         private int id;
+
+        public List<Order> orders;
+
         //address
         //billing address (if different)
         //phone number
@@ -20,6 +23,7 @@ namespace OrderForm
         {
             this.name = name;
             id = nextID++;
+            orders = new List<Order>();
         }
 
         public string Name
@@ -32,5 +36,7 @@ namespace OrderForm
         {
             return name + " " + id; 
         }
+
+
     }
 }
