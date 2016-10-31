@@ -87,6 +87,7 @@
             this.btnQuitTitle.TabIndex = 2;
             this.btnQuitTitle.Text = "Quit!";
             this.btnQuitTitle.UseVisualStyleBackColor = true;
+            this.btnQuitTitle.Click += new System.EventHandler(this.btnQuitTitle_Click);
             // 
             // Form1
             // 

@@ -15,6 +15,7 @@ namespace IST303_Asbury_C_A5
         public Form1()
         {
             InitializeComponent();
+            btnQuit.Visible = false;
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
@@ -25,6 +26,12 @@ namespace IST303_Asbury_C_A5
         private void btnPlay_Click(object sender, EventArgs e)
         {
             pnlTitle.Visible = false;
+            btnQuit.Visible = true;
+        }
+
+        private void btnQuitTitle_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
