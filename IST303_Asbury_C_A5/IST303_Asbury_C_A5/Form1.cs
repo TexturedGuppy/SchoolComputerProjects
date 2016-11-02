@@ -29,6 +29,7 @@ namespace IST303_Asbury_C_A5
             pnlTitle.Visible = false;
             pnlGame.Visible = true;
             btnQuit.Visible = true;
+            Form1.ActiveForm.CancelButton = btnQuit;
         }
 
         private void btnQuitTitle_Click(object sender, EventArgs e)
@@ -44,6 +45,12 @@ namespace IST303_Asbury_C_A5
         private void btnA_Click(object sender, EventArgs e)
         {
             btnA.Enabled = false;
+        }
+
+        private void btnAlphabetClick(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            button.Enabled = false;
         }
     }
 }
