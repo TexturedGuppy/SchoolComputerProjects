@@ -51,6 +51,7 @@ namespace IST303_Asbury_C_A5
         {
             var button = (Button)sender;
             button.Enabled = false;
+            MessageBox.Show("You pressed button " + button.Text);
         }
     }
 }
