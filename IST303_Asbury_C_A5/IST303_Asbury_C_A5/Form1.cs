@@ -42,10 +42,7 @@ namespace IST303_Asbury_C_A5
 
         }
 
-        private void btnA_Click(object sender, EventArgs e)
-        {
-            btnA.Enabled = false;
-        }
+     
 
         private void btnAlphabetClick(object sender, EventArgs e)
         {
