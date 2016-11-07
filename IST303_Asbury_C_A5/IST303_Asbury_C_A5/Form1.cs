@@ -12,6 +12,8 @@ namespace IST303_Asbury_C_A5
 {
     public partial class Form1 : Form
     {
+        Hangman h = new Hangman();
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +32,8 @@ namespace IST303_Asbury_C_A5
             pnlGame.Visible = true;
             btnQuit.Visible = true;
             Form1.ActiveForm.CancelButton = btnQuit;
+            lblWord.Text = h.GetWordText();
+
         }
 
         private void btnQuitTitle_Click(object sender, EventArgs e)
@@ -49,6 +53,7 @@ namespace IST303_Asbury_C_A5
             var button = (Button)sender;
             button.Enabled = false;
             MessageBox.Show("You pressed button " + button.Text);
+            lblWord.Text = h.GetWordText();
         }
     }
 }

@@ -60,6 +60,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblWord = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlGame.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // btnQuitTitle
             // 
+            this.btnQuitTitle.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnQuitTitle.Location = new System.Drawing.Point(282, 479);
             this.btnQuitTitle.Name = "btnQuitTitle";
             this.btnQuitTitle.Size = new System.Drawing.Size(178, 50);
@@ -130,6 +132,7 @@
             // 
             // pnlGame
             // 
+            this.pnlGame.Controls.Add(this.lblWord);
             this.pnlGame.Controls.Add(this.button25);
             this.pnlGame.Controls.Add(this.button24);
             this.pnlGame.Controls.Add(this.button23);
@@ -436,6 +439,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnAlphabetClick);
             // 
+            // lblWord
+            // 
+            this.lblWord.AutoSize = true;
+            this.lblWord.Location = new System.Drawing.Point(257, 432);
+            this.lblWord.Name = "lblWord";
+            this.lblWord.Size = new System.Drawing.Size(67, 13);
+            this.lblWord.TabIndex = 30;
+            this.lblWord.Text = "HiddenWord";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +463,7 @@
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.pnlGame.ResumeLayout(false);
+            this.pnlGame.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -489,6 +502,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblWord;
     }
 }
 
