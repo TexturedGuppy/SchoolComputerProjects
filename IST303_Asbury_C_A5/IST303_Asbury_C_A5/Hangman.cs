@@ -54,13 +54,21 @@ namespace IST303_Asbury_C_A5
         private void Compare(char letter)
         {
             
-            foreach (char c in selectedWord)
+            for (int i = 0; i < selectedWord.Length; i++)
             {
-                if (c == letter)
+                if(letter == selectedWord[i])
                 {
-
+                    selectedWordDisplayed[i] = letter;
                 }
             }
+
+            //foreach (char c in selectedWord)
+            //{
+            //    if (c == letter)
+            //    {
+            //        int i = c.Current;
+            //    }
+            //}
         }
     }
 }

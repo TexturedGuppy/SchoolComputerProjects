@@ -51,9 +51,11 @@ namespace IST303_Asbury_C_A5
         private void btnAlphabetClick(object sender, EventArgs e)
         {
             var button = (Button)sender;
+            char temp = Convert.ToChar(button.Text);
             button.Enabled = false;
             MessageBox.Show("You pressed button " + button.Text);
             lblWord.Text = h.GetWordText();
+            h.turn(temp);
         }
     }
 }
