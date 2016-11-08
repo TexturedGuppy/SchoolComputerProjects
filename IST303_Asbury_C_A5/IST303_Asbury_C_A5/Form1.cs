@@ -13,6 +13,7 @@ namespace IST303_Asbury_C_A5
     public partial class Form1 : Form
     {
         Hangman h = new Hangman();
+        List<Button> usedButtons = new List<Button>();
 
         public Form1()
         {
@@ -51,11 +52,23 @@ namespace IST303_Asbury_C_A5
         private void btnAlphabetClick(object sender, EventArgs e)
         {
             var button = (Button)sender;
+            usedButtons.Add(button);
             char temp = Convert.ToChar(button.Text);
             button.Enabled = false;
-            MessageBox.Show("You pressed button " + button.Text);
+            //MessageBox.Show("You pressed button " + button.Text);
             h.turn(temp);
             lblWord.Text = h.GetWordText();
+        }
+
+        private void btnReplay_Click(object sender, EventArgs e)
+        {
+            h = new Hangman();
+            foreach (Button b in usedButtons)
+            {
+                b.Enabled = true;
+            }
+            lblWord.Text = h.GetWordText();
+
         }
     }
 }

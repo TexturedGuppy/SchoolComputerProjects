@@ -61,6 +61,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnReplay = new System.Windows.Forms.Button();
             this.pnlTitle.SuspendLayout();
             this.pnlGame.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +133,7 @@
             // 
             // pnlGame
             // 
+            this.pnlGame.Controls.Add(this.btnReplay);
             this.pnlGame.Controls.Add(this.lblWord);
             this.pnlGame.Controls.Add(this.button25);
             this.pnlGame.Controls.Add(this.button24);
@@ -167,10 +169,10 @@
             // lblWord
             // 
             this.lblWord.AutoSize = true;
-            this.lblWord.Font = new System.Drawing.Font("Monotxt_IV25", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWord.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWord.Location = new System.Drawing.Point(257, 432);
             this.lblWord.Name = "lblWord";
-            this.lblWord.Size = new System.Drawing.Size(312, 50);
+            this.lblWord.Size = new System.Drawing.Size(280, 47);
             this.lblWord.TabIndex = 30;
             this.lblWord.Text = "HiddenWord";
             // 
@@ -449,6 +451,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnAlphabetClick);
             // 
+            // btnReplay
+            // 
+            this.btnReplay.Location = new System.Drawing.Point(29, 569);
+            this.btnReplay.Name = "btnReplay";
+            this.btnReplay.Size = new System.Drawing.Size(75, 23);
+            this.btnReplay.TabIndex = 31;
+            this.btnReplay.Text = "Restart";
+            this.btnReplay.UseVisualStyleBackColor = true;
+            this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +516,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblWord;
+        private System.Windows.Forms.Button btnReplay;
     }
 }
 
