@@ -35,6 +35,7 @@
             this.btnQuitTitle = new System.Windows.Forms.Button();
             this.btnA = new System.Windows.Forms.Button();
             this.pnlGame = new System.Windows.Forms.Panel();
+            this.lblWord = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblWord = new System.Windows.Forms.Label();
             this.pnlTitle.SuspendLayout();
             this.pnlGame.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +163,16 @@
             this.pnlGame.Name = "pnlGame";
             this.pnlGame.Size = new System.Drawing.Size(734, 612);
             this.pnlGame.TabIndex = 5;
+            // 
+            // lblWord
+            // 
+            this.lblWord.AutoSize = true;
+            this.lblWord.Font = new System.Drawing.Font("Monotxt_IV25", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWord.Location = new System.Drawing.Point(257, 432);
+            this.lblWord.Name = "lblWord";
+            this.lblWord.Size = new System.Drawing.Size(312, 50);
+            this.lblWord.TabIndex = 30;
+            this.lblWord.Text = "HiddenWord";
             // 
             // button25
             // 
@@ -438,15 +448,6 @@
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnAlphabetClick);
-            // 
-            // lblWord
-            // 
-            this.lblWord.AutoSize = true;
-            this.lblWord.Location = new System.Drawing.Point(257, 432);
-            this.lblWord.Name = "lblWord";
-            this.lblWord.Size = new System.Drawing.Size(67, 13);
-            this.lblWord.TabIndex = 30;
-            this.lblWord.Text = "HiddenWord";
             // 
             // Form1
             // 

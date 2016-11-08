@@ -9,18 +9,60 @@ namespace IST303_Asbury_C_A5
     class Hangman
     {
         private static Random r = new Random();
-        private static string[] words = {"default", "cameron", "ist", "programming"};
-        private static string selectedWord = words[r.Next(0,words.Length)].ToUpper();
-        private static int count = 0;
-        StringBuilder selectedWordDisplayed = new StringBuilder(selectedWord.Length);
-     
+        private string[] words = {"default", "cameron", "ist", "programming"};
+        private string selectedWord;
+        private int count;
+        private int letterCount;
+        private int underScoreCount;
+        StringBuilder selectedWordDisplayed; 
+
         public Hangman()
         {
-            for(int i = 0; i<selectedWord.Length; i++)
+            count = 0;
+            letterCount = 0;
+            underScoreCount = 0;
+            selectedWord = words[r.Next(0, words.Length)].ToUpper();
+            selectedWordDisplayed = new StringBuilder(selectedWord.Length);
+
+            foreach (char c in selectedWord)
             {
-                selectedWordDisplayed.Append('_');
+                if(c.ToString() == " ")
+                {
+                    selectedWordDisplayed.Append(' ');
+
+                }
+                else
+                {
+                    selectedWordDisplayed.Append('_');
+
+
+                    letterCount++;
+                }
             }
-           //Form1.lblWord.Text = selectedWordDisplayed;
+
+            foreach (char c in selectedWordDisplayed.ToString())
+            {
+                if(c.ToString() == "_")
+                {
+                    underScoreCount++;
+                }
+
+            }
+        }
+
+                
+
+
+        private bool isWin()
+        {
+            if (letterCount == selectedWord.Length)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public string GetWordText()
@@ -58,8 +100,11 @@ namespace IST303_Asbury_C_A5
             {
                 if(letter == selectedWord[i])
                 {
+                    
                     selectedWordDisplayed[i] = letter;
+
                 }
+                
             }
 
             //foreach (char c in selectedWord)
