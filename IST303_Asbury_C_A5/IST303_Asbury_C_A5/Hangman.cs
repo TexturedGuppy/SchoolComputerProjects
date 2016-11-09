@@ -26,7 +26,7 @@ namespace IST303_Asbury_C_A5
 
             foreach (char c in selectedWord)
             {
-                if(c.ToString() == " ")
+                if(c == ' ')
                 {
                     selectedWordDisplayed.Append(' ');
 
@@ -36,7 +36,6 @@ namespace IST303_Asbury_C_A5
                     selectedWordDisplayed.Append('_');
 
 
-                    letterCount++;
                 }
             }
 
@@ -53,9 +52,9 @@ namespace IST303_Asbury_C_A5
                 
 
 
-        private bool isWin()
+        public bool isWin()
         {
-            if (letterCount == selectedWord.Length)
+            if (letterCount == underScoreCount)
             {
                 return true;
             }
@@ -67,13 +66,31 @@ namespace IST303_Asbury_C_A5
 
         public string GetWordText()
         {
+            
             return selectedWordDisplayed.ToString();
+            
         }
+
+        public string Win()
+        {
+            return "YOU WIN!";
+        }
+            
+             
+        public string Lose()
+        {
+            return "YOU LOSE!";
+        }
+
+
+
 
         public void turn(char letter)
         {
             if (selectedWord.IndexOf(letter) == -1)
             {
+                count++;
+
                 IsDead();
             }
             else
@@ -82,11 +99,10 @@ namespace IST303_Asbury_C_A5
             }
         }
 
-        private bool IsDead()
+        public bool IsDead()
         {
             if (count < 10)
             {
-                count++;
                 return false;
             }
             else
@@ -100,20 +116,14 @@ namespace IST303_Asbury_C_A5
             {
                 if(letter == selectedWord[i])
                 {
-                    
+                    letterCount++;
                     selectedWordDisplayed[i] = letter;
 
                 }
                 
             }
 
-            //foreach (char c in selectedWord)
-            //{
-            //    if (c == letter)
-            //    {
-            //        int i = c.Current;
-            //    }
-            //}
+           
         }
     }
 }
