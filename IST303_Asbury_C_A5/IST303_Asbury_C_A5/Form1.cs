@@ -34,6 +34,7 @@ namespace IST303_Asbury_C_A5
             btnQuit.Visible = true;
             Form1.ActiveForm.CancelButton = btnQuit;
             lblWord.Text = h.GetWordText();
+            lblWinLose.Text = "";
 
         }
 
@@ -51,25 +52,25 @@ namespace IST303_Asbury_C_A5
 
         private void btnAlphabetClick(object sender, EventArgs e)
         {
-            if(h.isWin())
+            var button = (Button)sender;
+            char temp = Convert.ToChar(button.Text);
+            usedButtons.Add(button);
+            if (!h.IsDead() && !h.isWin())
             {
-                lblWord.Text = h.Win();
-            }
-            else if (h.IsDead())
-            {
-                lblWord.Text = h.Lose();
-            }
-            else if (!h.IsDead() || !h.isWin())
-            {
-                var button = (Button)sender;
-                usedButtons.Add(button);
-                char temp = Convert.ToChar(button.Text);
+            h.turn(temp);
                 button.Enabled = false;
-                //MessageBox.Show("You pressed button " + button.Text);
-                h.turn(temp);
-                lblWord.Text = h.GetWordText();
+
+            }
+            if (h.isWin())
+            {
+                lblWinLose.Text = h.Win();
+            }
+            if (h.IsDead())
+            {
+                lblWinLose.Text = h.Lose();
             }
 
+            lblWord.Text = h.GetWordText();
         }
 
         private void btnReplay_Click(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace IST303_Asbury_C_A5
                 b.Enabled = true;
             }
             lblWord.Text = h.GetWordText();
+            lblWinLose.Text = "";
 
         }
     }

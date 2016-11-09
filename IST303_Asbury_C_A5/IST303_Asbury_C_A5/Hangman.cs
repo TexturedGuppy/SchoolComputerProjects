@@ -54,7 +54,7 @@ namespace IST303_Asbury_C_A5
 
         public bool isWin()
         {
-            if (letterCount == underScoreCount)
+            if (letterCount >= underScoreCount)
             {
                 return true;
             }
@@ -91,7 +91,7 @@ namespace IST303_Asbury_C_A5
             {
                 count++;
 
-                IsDead();
+                //IsDead();
             }
             else
             {
