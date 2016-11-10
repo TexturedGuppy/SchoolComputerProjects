@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace IST303_Asbury_C_A5
 {
     class Hangman
     {
         private static Random r = new Random();
-        private string[] words = {"default", "cameron", "ist", "programming"};
+        //private string[] words = {"default", "cameron", "ist", "programming"};
+        private string[] words = File.ReadAllLines("words.txt");
         private string selectedWord;
         private int count;
         private int letterCount;
         private int underScoreCount;
         StringBuilder selectedWordDisplayed; 
+
+        public int Count
+        {
+            get { return count; }
+        }
 
         public Hangman()
         {
@@ -101,7 +108,7 @@ namespace IST303_Asbury_C_A5
 
         public bool IsDead()
         {
-            if (count < 10)
+            if (count < 6)
             {
                 return false;
             }

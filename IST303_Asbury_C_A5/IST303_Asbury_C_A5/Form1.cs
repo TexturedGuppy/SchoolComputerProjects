@@ -57,7 +57,7 @@ namespace IST303_Asbury_C_A5
             usedButtons.Add(button);
             if (!h.IsDead() && !h.isWin())
             {
-            h.turn(temp);
+                h.turn(temp);
                 button.Enabled = false;
 
             }
@@ -68,6 +68,32 @@ namespace IST303_Asbury_C_A5
             if (h.IsDead())
             {
                 lblWinLose.Text = h.Lose();
+            }
+
+            //if (h.Count == 1)
+            //{
+            //    picHangman.Image = Image.FromFile("hangman1.png");
+            //}
+            switch (h.Count)
+            {
+                case 1:
+                    picHangman.Image = Image.FromFile("hangman1.png");
+                    break;
+                case 2:
+                    picHangman.Image = Image.FromFile("hangman2.png");
+                    break;
+                case 3:
+                    picHangman.Image = Image.FromFile("hangman3.png");
+                    break;
+                case 4:
+                    picHangman.Image = Image.FromFile("hangman4.png");
+                    break;
+                case 5:
+                    picHangman.Image = Image.FromFile("hangman5.png");
+                    break;
+                case 6:
+                    picHangman.Image = Image.FromFile("hangman6.png");
+                    break;
             }
 
             lblWord.Text = h.GetWordText();
@@ -86,3 +112,6 @@ namespace IST303_Asbury_C_A5
         }
     }
 }
+
+
+

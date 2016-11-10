@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lblHangman = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnQuit = new System.Windows.Forms.Button();
@@ -35,6 +36,8 @@
             this.btnQuitTitle = new System.Windows.Forms.Button();
             this.btnA = new System.Windows.Forms.Button();
             this.pnlGame = new System.Windows.Forms.Panel();
+            this.picHangman = new System.Windows.Forms.PictureBox();
+            this.lblWinLose = new System.Windows.Forms.Label();
             this.btnReplay = new System.Windows.Forms.Button();
             this.lblWord = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
@@ -62,11 +65,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.lblWinLose = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTitle.SuspendLayout();
             this.pnlGame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHangman)).BeginInit();
             this.SuspendLayout();
             // 
             // lblHangman
@@ -94,7 +95,7 @@
             // btnQuit
             // 
             this.btnQuit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnQuit.Location = new System.Drawing.Point(898, 601);
+            this.btnQuit.Location = new System.Drawing.Point(29, 598);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(75, 23);
             this.btnQuit.TabIndex = 2;
@@ -136,8 +137,9 @@
             // 
             // pnlGame
             // 
-            this.pnlGame.Controls.Add(this.pictureBox1);
+            this.pnlGame.Controls.Add(this.picHangman);
             this.pnlGame.Controls.Add(this.lblWinLose);
+            this.pnlGame.Controls.Add(this.btnQuit);
             this.pnlGame.Controls.Add(this.btnReplay);
             this.pnlGame.Controls.Add(this.lblWord);
             this.pnlGame.Controls.Add(this.button25);
@@ -166,10 +168,32 @@
             this.pnlGame.Controls.Add(this.button2);
             this.pnlGame.Controls.Add(this.button1);
             this.pnlGame.Controls.Add(this.btnA);
-            this.pnlGame.Location = new System.Drawing.Point(979, 12);
+            this.pnlGame.Location = new System.Drawing.Point(110, -2);
             this.pnlGame.Name = "pnlGame";
-            this.pnlGame.Size = new System.Drawing.Size(734, 612);
+            this.pnlGame.Size = new System.Drawing.Size(750, 626);
             this.pnlGame.TabIndex = 5;
+            // 
+            // picHangman
+            // 
+            this.picHangman.Image = ((System.Drawing.Image)(resources.GetObject("picHangman.Image")));
+            this.picHangman.Location = new System.Drawing.Point(285, 49);
+            this.picHangman.Name = "picHangman";
+            this.picHangman.Size = new System.Drawing.Size(174, 205);
+            this.picHangman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHangman.TabIndex = 33;
+            this.picHangman.TabStop = false;
+            // 
+            // lblWinLose
+            // 
+            this.lblWinLose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWinLose.Font = new System.Drawing.Font("Stencil", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWinLose.ForeColor = System.Drawing.Color.Red;
+            this.lblWinLose.Location = new System.Drawing.Point(3, 325);
+            this.lblWinLose.Name = "lblWinLose";
+            this.lblWinLose.Size = new System.Drawing.Size(744, 114);
+            this.lblWinLose.TabIndex = 32;
+            this.lblWinLose.Text = "WinOrLose";
+            this.lblWinLose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnReplay
             // 
@@ -185,9 +209,9 @@
             // 
             this.lblWord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblWord.Font = new System.Drawing.Font("Stencil", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWord.Location = new System.Drawing.Point(3, 432);
+            this.lblWord.Location = new System.Drawing.Point(3, 439);
             this.lblWord.Name = "lblWord";
-            this.lblWord.Size = new System.Drawing.Size(728, 47);
+            this.lblWord.Size = new System.Drawing.Size(744, 47);
             this.lblWord.TabIndex = 30;
             this.lblWord.Text = "HiddenWord";
             this.lblWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -467,42 +491,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnAlphabetClick);
             // 
-            // lblWinLose
-            // 
-            this.lblWinLose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblWinLose.Font = new System.Drawing.Font("Stencil", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWinLose.ForeColor = System.Drawing.Color.Red;
-            this.lblWinLose.Location = new System.Drawing.Point(3, 318);
-            this.lblWinLose.Name = "lblWinLose";
-            this.lblWinLose.Size = new System.Drawing.Size(728, 114);
-            this.lblWinLose.TabIndex = 32;
-            this.lblWinLose.Text = "WinOrLose";
-            this.lblWinLose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(285, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 205);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnQuitTitle;
-            this.ClientSize = new System.Drawing.Size(1763, 636);
+            this.ClientSize = new System.Drawing.Size(974, 636);
             this.Controls.Add(this.pnlGame);
             this.Controls.Add(this.pnlTitle);
-            this.Controls.Add(this.btnQuit);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlTitle.ResumeLayout(false);
             this.pnlTitle.PerformLayout();
             this.pnlGame.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHangman)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,7 +547,7 @@
         private System.Windows.Forms.Label lblWord;
         private System.Windows.Forms.Button btnReplay;
         private System.Windows.Forms.Label lblWinLose;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picHangman;
     }
 }
 
