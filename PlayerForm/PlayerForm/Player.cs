@@ -8,6 +8,10 @@ namespace PlayerForm
 {
     struct Player
     {
+        public enum FileParams
+        {
+            name, level, score
+        }
         public string name;
         public int level;
         public int score;

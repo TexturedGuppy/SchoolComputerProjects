@@ -38,17 +38,38 @@ namespace PlayerForm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             FileStream file = new FileStream("leaderboard.txt", FileMode.Open);
             StreamReader reader = new StreamReader(file);
 
-            string line = reader.ReadLine();
-            lstPlayers.Items.Add(line);
-            while (!reader.EndOfStream)
+            //string line = reader.ReadLine();
+            //lstPlayers.Items.Add(line);
+            do
             {
-                line = reader.ReadLine();
+                string line = reader.ReadLine();
                 //convert line to player
-                lstPlayers.Items.Add(line);
+                string[] data = line.Split(' ');
+
+                Player p;
+                p.name = data[0];
+                p.name = data[(int)Player.FileParams.name];
+                if (!int.TryParse(data[(int)Player.FileParams.level], out p.level))
+                {
+                    MessageBox.Show("Someone messed with this file!");
+                }
+                if (!int.TryParse(data[(int)Player.FileParams.score], out p.score))
+                {
+                    MessageBox.Show("Someone messed with this file!");
+                }
+                //p.level = Convert.ToInt32(data[(int)Player.FileParams.level]);
+
+
+                lstPlayers.Items.Add(p);
             }
+            while (!reader.EndOfStream);
+
+            reader.Close();
+            file.Close();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
