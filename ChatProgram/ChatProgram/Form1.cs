@@ -20,7 +20,7 @@ namespace ChatProgram
         UdpClient sendingClient;
         UdpClient receivingClient;
         int port = 1234;
-
+        string user = "Anonymous";
         public frmMain()
         {
             InitializeComponent();
@@ -28,12 +28,17 @@ namespace ChatProgram
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            //btnSend.Enabled = !string.IsNullOrWhiteSpace(txtUserName.Text);
+            //btnSend.Enabled = !string.IsNullOrWhiteSpace(txtSend.Text);
+            user = txtUserName.Text;
             byte[] msg = Encoding.ASCII.GetBytes(txtSend.Text);
             sendingClient.Send(msg, msg.Length);
+            txtSend.Clear();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            btnSend.Enabled = false;
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Broadcast, port);
             sendingClient = new UdpClient();
             sendingClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
@@ -53,7 +58,7 @@ namespace ChatProgram
                 IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
                 byte[] buffer = receivingClient.Receive(ref endPoint);
                 string msg = Encoding.ASCII.GetString(buffer);
-                txtChat.AppendText(msg + "\n");
+                txtChat.AppendText(user + ": " + msg + "\n");
                 await Task.Factory.StartNew(() => Listen());
             }
             catch(Exception e)
@@ -61,5 +66,28 @@ namespace ChatProgram
                 txtChat.AppendText("Error: " + e.Message + "\n");
             }
         }
+
+        private void txtSend_TextChanged(object sender, EventArgs e)
+        {
+            sendButtonDisable();
+        }
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+            sendButtonDisable();
+
+        }
+
+        private void sendButtonDisable()
+        {
+            if (!string.IsNullOrWhiteSpace(txtSend.Text) && !string.IsNullOrWhiteSpace(txtUserName.Text))
+            {
+                btnSend.Enabled = true;
+            }
+            else
+            {
+                btnSend.Enabled = false;
+            }
+        }
+
     }
 }

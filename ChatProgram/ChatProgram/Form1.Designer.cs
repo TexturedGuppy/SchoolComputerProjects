@@ -32,6 +32,8 @@
             this.btnSend = new System.Windows.Forms.Button();
             this.txtSend = new System.Windows.Forms.TextBox();
             this.lstUsers = new System.Windows.Forms.ListBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtChat
@@ -40,6 +42,7 @@
             this.txtChat.Name = "txtChat";
             this.txtChat.Size = new System.Drawing.Size(300, 246);
             this.txtChat.TabIndex = 0;
+            this.txtChat.TabStop = false;
             this.txtChat.Text = "";
             // 
             // btnSend
@@ -57,7 +60,8 @@
             this.txtSend.Location = new System.Drawing.Point(12, 304);
             this.txtSend.Name = "txtSend";
             this.txtSend.Size = new System.Drawing.Size(300, 20);
-            this.txtSend.TabIndex = 2;
+            this.txtSend.TabIndex = 1;
+            this.txtSend.TextChanged += new System.EventHandler(this.txtSend_TextChanged);
             // 
             // lstUsers
             // 
@@ -66,12 +70,34 @@
             this.lstUsers.Name = "lstUsers";
             this.lstUsers.Size = new System.Drawing.Size(120, 95);
             this.lstUsers.TabIndex = 3;
+            this.lstUsers.TabStop = false;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(472, 237);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.TabIndex = 4;
+            this.txtUserName.TabStop = false;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(408, 240);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(58, 13);
+            this.lblUserName.TabIndex = 5;
+            this.lblUserName.Text = "Username:";
             // 
             // frmMain
             // 
+            this.AcceptButton = this.btnSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 475);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lstUsers);
             this.Controls.Add(this.txtSend);
             this.Controls.Add(this.btnSend);
@@ -90,6 +116,8 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox txtSend;
         private System.Windows.Forms.ListBox lstUsers;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.Label lblUserName;
     }
 }
 
