@@ -34,6 +34,7 @@
             this.lstUsers = new System.Windows.Forms.ListBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
+            this.lblWarning = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtChat
@@ -90,12 +91,23 @@
             this.lblUserName.TabIndex = 5;
             this.lblUserName.Text = "Username:";
             // 
+            // lblWarning
+            // 
+            this.lblWarning.AutoSize = true;
+            this.lblWarning.ForeColor = System.Drawing.Color.Crimson;
+            this.lblWarning.Location = new System.Drawing.Point(469, 221);
+            this.lblWarning.Name = "lblWarning";
+            this.lblWarning.Size = new System.Drawing.Size(109, 13);
+            this.lblWarning.TabIndex = 6;
+            this.lblWarning.Text = "Must Enter Username";
+            // 
             // frmMain
             // 
             this.AcceptButton = this.btnSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 475);
+            this.Controls.Add(this.lblWarning);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.lstUsers);
@@ -118,6 +130,7 @@
         private System.Windows.Forms.ListBox lstUsers;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label lblWarning;
     }
 }
 

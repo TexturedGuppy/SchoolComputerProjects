@@ -28,6 +28,12 @@ namespace ChatProgram
 
         private void btnSend_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtUserName.Text))
+            {
+                lblWarning.Visible = true;
+            }
+
+
             //btnSend.Enabled = !string.IsNullOrWhiteSpace(txtUserName.Text);
             //btnSend.Enabled = !string.IsNullOrWhiteSpace(txtSend.Text);
             user = txtUserName.Text;
@@ -38,6 +44,7 @@ namespace ChatProgram
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            lblWarning.Visible = false;
             btnSend.Enabled = false;
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Broadcast, port);
             sendingClient = new UdpClient();
@@ -81,6 +88,7 @@ namespace ChatProgram
         {
             if (!string.IsNullOrWhiteSpace(txtSend.Text) && !string.IsNullOrWhiteSpace(txtUserName.Text))
             {
+                lblWarning.Visible = false;
                 btnSend.Enabled = true;
             }
             else
