@@ -74,6 +74,26 @@ namespace ChatProgram
             }
         }
 
+        private void Process(string msg)
+        {
+            int packetType = Convert.ToInt32(msg[0]);
+            switch ((MessageType)packetType)
+            {
+                case MessageType.Chat:
+                    txtChat.AppendText(msg.Substring(1) + "\n");
+                    //type is Chat
+                    break;
+                case MessageType.Login:
+
+                    //type is login
+                    break;
+                case MessageType.Whisper:
+
+                    //case is whisper
+                    break;
+            }
+        }
+
         private void txtSend_TextChanged(object sender, EventArgs e)
         {
             sendButtonDisable();
