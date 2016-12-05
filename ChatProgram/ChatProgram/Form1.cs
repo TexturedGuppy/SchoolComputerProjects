@@ -36,8 +36,8 @@ namespace ChatProgram
 
             //btnSend.Enabled = !string.IsNullOrWhiteSpace(txtUserName.Text);
             //btnSend.Enabled = !string.IsNullOrWhiteSpace(txtSend.Text);
-            user = txtUserName.Text;
-            byte[] msg = Encoding.ASCII.GetBytes(txtSend.Text);
+            //user = txtUserName.Text;
+            byte[] msg = Encoding.ASCII.GetBytes("0" + txtSend.Text);
             sendingClient.Send(msg, msg.Length);
             txtSend.Clear();
         }
@@ -45,7 +45,7 @@ namespace ChatProgram
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblWarning.Visible = false;
-            btnSend.Enabled = false;
+            //btnSend.Enabled = false;
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Broadcast, port);
             sendingClient = new UdpClient();
             sendingClient.Client.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
@@ -65,7 +65,8 @@ namespace ChatProgram
                 IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
                 byte[] buffer = receivingClient.Receive(ref endPoint);
                 string msg = Encoding.ASCII.GetString(buffer);
-                txtChat.AppendText(user + ": " + msg + "\n");
+                //txtChat.AppendText(user + ": " + msg + "\n");
+                txtChat.AppendText(msg + "\n");
                 await Task.Factory.StartNew(() => Listen());
             }
             catch(Exception e)
@@ -76,7 +77,7 @@ namespace ChatProgram
 
         private void Process(string msg)
         {
-            int packetType = Convert.ToInt32(msg[0]);
+            int packetType = (int)char.GetNumericValue(msg[0]);
             switch ((MessageType)packetType)
             {
                 case MessageType.Chat:
@@ -84,7 +85,7 @@ namespace ChatProgram
                     //type is Chat
                     break;
                 case MessageType.Login:
-
+                    lstUsers.Items.Add(msg.Substring(1) + "\n");
                     //type is login
                     break;
                 case MessageType.Whisper:
@@ -94,28 +95,34 @@ namespace ChatProgram
             }
         }
 
-        private void txtSend_TextChanged(object sender, EventArgs e)
-        {
-            sendButtonDisable();
-        }
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-            sendButtonDisable();
+        //private void txtSend_TextChanged(object sender, EventArgs e)
+        //{
+        //   // sendButtonDisable();
+        //}
+        //private void txtUserName_TextChanged(object sender, EventArgs e)
+        //{
+        //    //sendButtonDisable();
 
+        //}
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            byte[] msg = Encoding.ASCII.GetBytes((int)MessageType.Login + txtSend.Text);
+            sendingClient.Send(msg, msg.Length);
         }
 
-        private void sendButtonDisable()
-        {
-            if (!string.IsNullOrWhiteSpace(txtSend.Text) && !string.IsNullOrWhiteSpace(txtUserName.Text))
-            {
-                lblWarning.Visible = false;
-                btnSend.Enabled = true;
-            }
-            else
-            {
-                btnSend.Enabled = false;
-            }
-        }
+        //private void sendButtonDisable()
+        //{
+        //    if (!string.IsNullOrWhiteSpace(txtSend.Text) && !string.IsNullOrWhiteSpace(txtUserName.Text))
+        //    {
+        //        lblWarning.Visible = false;
+        //        btnSend.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        btnSend.Enabled = false;
+        //    }
+        //}
 
     }
 }
